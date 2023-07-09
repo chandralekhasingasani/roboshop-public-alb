@@ -1,5 +1,5 @@
 data "dns_a_record_set" "frontend" {
-  host = "frontend-{{COMPONENT}}.roboshop.internal"
+  host = "frontend-${var.ENV}.roboshop.internal"
 }
 
 locals {
