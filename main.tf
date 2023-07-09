@@ -1,5 +1,5 @@
 resource "aws_lb" "alb" {
-  name               = "${var.PROJECT_NAME}-${var.ENV}-alb-"
+  name               = "${var.PROJECT_NAME}-${var.ENV}-alb-test"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_tls.id]
