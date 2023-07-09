@@ -1,16 +1,16 @@
 resource "aws_lb" "alb" {
-  name               = "${var.PROJECT_NAME}-${ENV}-alb"
+  name               = "${var.PROJECT_NAME}-${var.ENV}-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_alb.id]
   subnets            = var.DEFAULT_SUBNET_ID
   tags = {
-    Environment = "${var.PROJECT_NAME}-${var.COMPONENT}"
+    Environment = "${var.PROJECT_NAME}-${var.ENV}-alb"
   }
 }
 
 resource "aws_lb_target_group" "tg" {
-  name        = "${var.PROJECT_NAME}-${ENV}-tg"
+  name        = "${var.PROJECT_NAME}-${var.ENV}-tg"
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
