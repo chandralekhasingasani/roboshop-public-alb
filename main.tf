@@ -2,7 +2,7 @@ resource "aws_lb" "alb" {
   name               = "${var.PROJECT_NAME}-${var.ENV}-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.allow_alb.id]
+  security_groups    = [aws_security_group.allow_tls.id]
   subnets            = var.DEFAULT_SUBNET_ID
   tags = {
     Environment = "${var.PROJECT_NAME}-${var.ENV}-alb"
